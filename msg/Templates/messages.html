@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <th>Sender</th><th>Body</th><th>Receiver</th>
+    {% for i in msgs %}
+    <tr>
+    <td>{{i.sender.User.username}}</td> <td> {{i.data}}</td> <td>{{i.receiver.User.username}}</td>
+    </tr>
+    {% endfor %}
+        </table>
+    <form method="GET" action="/message/{{u_id}}">
+        <input type="text" name="msg">
+        <input type="submit" name="send">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <a href="accounts/logout">Logout</a>
+    <h1>Connected Users</h1>
+    {% for i in s%}
+        <p>{{i.User.username}}</p>
+        <a href="/messages/{{i.id}}">message</a>
+    {% endfor %}
+    <h1>Available Users</h1>
+    {% for i in all %}
+        <p>{{i.User.username}}</p>
+        <a href="/connect/{{i.id}}">connect</a>
+    {% endfor %}
+
+</body>
+</html>
